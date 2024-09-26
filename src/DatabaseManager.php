@@ -41,6 +41,48 @@ class DatabaseManager implements DatabaseManagerInterface
     }
 
     /**
+     * Start a new database transaction.
+     *
+     * @return void
+     */
+    public function beginTransaction(): void
+    {
+        call_user_func([$this->getManager(), __FUNCTION__]);
+    }
+
+    /**
+     * Commit the active database transaction.
+     *
+     * @return void
+     */
+    public function commit(): void
+    {
+        call_user_func([$this->getManager(), __FUNCTION__]);
+    }
+
+    /**
+     * Rollback the active database transaction.
+     *
+     * @return void
+     */
+    public function rollBack(): void
+    {
+        call_user_func([$this->getManager(), __FUNCTION__]);
+    }
+
+    /**
+     * Run a raw, unprepared query against the PDO connection.
+     *
+     * @param string $query
+     *
+     * @return void
+     */
+    public function unprepared(string $query): void
+    {
+        call_user_func([$this->getManager(), __FUNCTION__], $query);
+    }
+
+    /**
      * Dynamically pass methods to the default connection.
      *
      * @param string $method

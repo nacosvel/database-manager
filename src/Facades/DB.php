@@ -9,6 +9,11 @@ use RuntimeException;
 use function Nacosvel\Container\Interop\application;
 
 /**
+ * @method static void beginTransaction()
+ * @method static void commit()
+ * @method static void rollBack()
+ * @method static void unprepared(string $query)
+ *
  * @see DatabaseManager
  */
 class DB extends Facade
