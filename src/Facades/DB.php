@@ -13,7 +13,7 @@ use function Nacosvel\Container\Interop\application;
  * @method static void commit()
  * @method static void rollBack()
  * @method static void unprepared(string $query)
- * @method static mixed connection($name = null)
+ * @method static mixed connection(string $name = null)
  * @method static mixed getDatabaseConfig(string $option = null)
  * @method static void startTransactionXa(string $xid)
  * @method static void endTransactionXa(string $xid)

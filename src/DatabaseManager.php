@@ -99,11 +99,11 @@ class DatabaseManager implements DatabaseManagerInterface
     /**
      * Get a database connection instance.
      *
-     * @param $name
+     * @param string|null $name
      *
      * @return mixed
      */
-    public function connection($name = null): mixed
+    public function connection(string $name = null): mixed
     {
         return call_user_func([$this->getManager(), __FUNCTION__], $name);
     }
