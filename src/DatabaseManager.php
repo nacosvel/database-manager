@@ -2,6 +2,7 @@
 
 namespace Nacosvel\DatabaseManager;
 
+use JetBrains\PhpStorm\ArrayShape;
 use Nacosvel\Contracts\DatabaseManager\DatabaseManagerInterface;
 use RuntimeException;
 
@@ -93,6 +94,103 @@ class DatabaseManager implements DatabaseManagerInterface
     public function __call(string $method, array $parameters)
     {
         return call_user_func_array([$this->getManager(), $method], $parameters);
+    }
+
+    /**
+     * Get a database connection instance.
+     *
+     * @param $name
+     *
+     * @return mixed
+     */
+    public function connection($name = null): mixed
+    {
+        return call_user_func([$this->getManager(), __FUNCTION__], $name);
+    }
+
+    /**
+     * Get the configuration for a connection.
+     *
+     * @param string|null $option
+     *
+     * @return array|mixed
+     */
+    #[ArrayShape([
+        'driver'      => 'string',
+        'url'         => 'string',
+        'host'        => 'string',
+        'port'        => 'string',
+        'database'    => 'string',
+        'username'    => 'string',
+        'password'    => 'string',
+        'unix_socket' => 'string',
+        'charset'     => 'string',
+        'collation'   => 'string',
+        'prefix'      => 'string',
+    ])]
+    public function getDatabaseConfig(string $option = null): mixed
+    {
+        return call_user_func([$this->getManager()->connection(), __FUNCTION__], $option);
+    }
+
+    /**
+     * Starts a distributed XA transaction with the given XID.
+     *
+     * @param string $xid The global transaction identifier (XID).
+     *
+     * @return void
+     */
+    public function startTransactionXa(string $xid): void
+    {
+        call_user_func([$this->getManager(), __FUNCTION__], $xid);
+    }
+
+    /**
+     * Ends the distributed XA transaction with the given XID.
+     *
+     * @param string $xid The global transaction identifier (XID).
+     *
+     * @return void
+     */
+    public function endTransactionXa(string $xid): void
+    {
+        call_user_func([$this->getManager(), __FUNCTION__], $xid);
+    }
+
+    /**
+     * Prepares the distributed XA transaction with the given XID for commit.
+     *
+     * @param string $xid The global transaction identifier (XID).
+     *
+     * @return void
+     */
+    public function prepareXa(string $xid): void
+    {
+        call_user_func([$this->getManager(), __FUNCTION__], $xid);
+    }
+
+    /**
+     * Commits the distributed XA transaction with the given XID.
+     *
+     * @param string $xid The global transaction identifier (XID).
+     *
+     * @return void
+     */
+    public function commitXa(string $xid): void
+    {
+        call_user_func([$this->getManager(), __FUNCTION__], $xid);
+    }
+
+    /**
+     * Rolls back the distributed XA transaction with the given XID.
+     *
+     * @param string $xid The global transaction identifier (XID).
+     *
+     * @return void
+     */
+    public function rollbackXa(string $xid): void
+    {
+        call_user_func([$this->getManager(), __FUNCTION__], $xid);
     }
 
 }
