@@ -29,7 +29,7 @@
         }
     },
     "suggest": {
-        "nacosvel/database-manager-implementation": "Required to use all nacosvel/database-manager features."
+        "nacosvel/database-manager-implementation": "Required for full functionality. See available implementations: https://packagist.org/providers/nacosvel/database-manager-implementation"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
