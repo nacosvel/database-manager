@@ -32,9 +32,10 @@ class AppServiceProvider extends ServiceProvider
 ```
 
 > 不同框架实现方式可能不一致，可以在服务提供者中实现容器发现功能。
+>
 > 具体操作查看 [nacosvel/container-interop](https://github.com/nacosvel/container-interop/blob/main/README.md)
 
-如果当前使用的框架可以通过`容器['db']`方式获取数据库管理对象，可以跳过本章节。
+将数据库管理对象绑定到 `Nacosvel\Contracts\DatabaseManager\DatabaseManagerInterface` 接口。
 
 ```php
 use App\Support\DatabaseManager;
