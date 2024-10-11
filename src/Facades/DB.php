@@ -14,10 +14,10 @@ use function Nacosvel\Container\Interop\application;
  * @method static \void unprepared(string $query) Run a raw, unprepared query against the PDO connection.
  * @method static \mixed connection(string $name = null) Get a database connection instance.
  * @method static \mixed getDatabaseConfig(string $option = null) Get the configuration for a connection.
- * @method static \void startTransactionXa(string $xid) Starts a distributed XA transaction with the given XID.
- * @method static \void prepareXa(string $xid) Prepares the distributed XA transaction with the given XID for commit.
- * @method static \void commitXa(string $xid) Commits the distributed XA transaction with the given XID.
- * @method static \void rollbackXa(string $xid) Rolls back the distributed XA transaction with the given XID.
+ * @method static \void xaBeginTransaction(string $xid) Starts a distributed XA transaction with the given XID.
+ * @method static \void xaPrepare(string $xid) Prepares the distributed XA transaction with the given XID for commit.
+ * @method static \void xaCommit(string $xid) Commits the distributed XA transaction with the given XID.
+ * @method static \void xaRollBack(string $xid) Rolls back the distributed XA transaction with the given XID.
  *
  * @see DatabaseManager
  */
