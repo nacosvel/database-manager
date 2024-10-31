@@ -58,5 +58,5 @@ class AppServiceProvider extends ServiceProvider
 
 ## License
 
-Nacosvel Contracts is made available under the MIT License (MIT). Please see [License File](LICENSE) for more
+Nacosvel Database Manager is made available under the MIT License (MIT). Please see [License File](LICENSE) for more
 information.
