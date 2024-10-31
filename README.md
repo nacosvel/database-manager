@@ -38,10 +38,10 @@ class AppServiceProvider extends ServiceProvider
 将数据库管理对象绑定到 `Nacosvel\Contracts\DatabaseManager\DatabaseManagerInterface` 接口。
 
 ```php
-use App\Support\DatabaseManager;
 use Illuminate\Support\ServiceProvider;
 use Nacosvel\Container\Interop\Discover;
 use Nacosvel\Contracts\DatabaseManager\DatabaseManagerInterface;
+use Nacosvel\DatabaseManager\DatabaseManager;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -56,9 +56,7 @@ class AppServiceProvider extends ServiceProvider
 }
 ```
 
-> 自定义 `App\Support\DatabaseManager` 数据库管理对象，并实现 `Nacosvel\Contracts\DatabaseManager\DatabaseManagerInterface`
-> 接口，然后绑定到容器。
-
 ## License
 
-Nacosvel Contracts is made available under the MIT License (MIT). Please see [License File](LICENSE) for more information.
+Nacosvel Contracts is made available under the MIT License (MIT). Please see [License File](LICENSE) for more
+information.

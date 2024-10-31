@@ -16,10 +16,7 @@
         "php": ">=8.0",
         "nacosvel/container-interop": "^1.0",
         "nacosvel/database-manager-contracts": "^1.0",
-        "nacosvel/facde": "^1.0",
-        "nacosvel/feign": "^1.0",
-        "nacosvel/rooster-contracts": "^1.0",
-        "symfony/uid": "^6.0"
+        "nacosvel/facde": "^1.0"
     },
     "autoload": {
         "psr-4": {
