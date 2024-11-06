@@ -1,12 +1,12 @@
 <?php
 
-namespace Nacosvel\DatabaseManager;
+namespace Nacosvel\DataSourceManager;
 
 use Closure;
 use InvalidArgumentException;
 use RuntimeException;
 
-abstract class MultipleInstanceManager
+abstract class MultipleManager
 {
     /**
      * The application instance.

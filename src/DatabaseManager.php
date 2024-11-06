@@ -1,6 +1,6 @@
 <?php
 
-namespace Nacosvel\DatabaseManager;
+namespace Nacosvel\DataSourceManager;
 
 use Nacosvel\Contracts\DatabaseManager\DatabaseManagerInterface;
 use PDO;

@@ -1,8 +1,8 @@
 {
-    "name": "nacosvel/database-manager",
-    "description": "Nacosvel Database Manager.",
+    "name": "nacosvel/datasource-manager",
+    "description": "Nacosvel DataSource Manager.",
     "keywords": [
-        "Nacosvel Database Manager"
+        "Nacosvel DataSource Manager"
     ],
     "type": "library",
     "license": "MIT",
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Nacosvel\\DatabaseManager\\": "src/"
+            "Nacosvel\\DataSourceManager\\": "src/"
         }
     },
     "extra": {

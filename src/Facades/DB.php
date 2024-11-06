@@ -1,9 +1,9 @@
 <?php
 
-namespace Nacosvel\DatabaseManager\Facades;
+namespace Nacosvel\DataSourceManager\Facades;
 
 use Nacosvel\Contracts\DatabaseManager\DatabaseManagerInterface;
-use Nacosvel\DatabaseManager\DatabaseManager;
+use Nacosvel\DataSourceManager\DatabaseManager;
 use Nacosvel\Facades\Facade;
 use PDO;
 use function Nacosvel\Container\Interop\application;

@@ -1,17 +1,17 @@
-# Nacosvel Database Manager
+# Nacosvel DataSource Manager
 
-[![GitHub Tag](https://img.shields.io/github/v/tag/nacosvel/database-manager)](https://github.com/nacosvel/database-manager/tags)
-[![Total Downloads](https://img.shields.io/packagist/dt/nacosvel/database-manager?style=flat-square)](https://packagist.org/packages/nacosvel/database-manager)
-[![Packagist Version](https://img.shields.io/packagist/v/nacosvel/database-manager)](https://packagist.org/packages/nacosvel/database-manager)
-[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/nacosvel/database-manager)](https://github.com/nacosvel/database-manager)
-[![Packagist License](https://img.shields.io/github/license/nacosvel/database-manager)](https://github.com/nacosvel/database-manager)
+[![GitHub Tag](https://img.shields.io/github/v/tag/nacosvel/datasource-manager)](https://github.com/nacosvel/datasource-manager/tags)
+[![Total Downloads](https://img.shields.io/packagist/dt/nacosvel/datasource-manager?style=flat-square)](https://packagist.org/packages/nacosvel/datasource-manager)
+[![Packagist Version](https://img.shields.io/packagist/v/nacosvel/datasource-manager)](https://packagist.org/packages/nacosvel/datasource-manager)
+[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/nacosvel/datasource-manager)](https://github.com/nacosvel/datasource-manager)
+[![Packagist License](https://img.shields.io/github/license/nacosvel/datasource-manager)](https://github.com/nacosvel/datasource-manager)
 
 ## Installation
 
 You can install the package via [Composer](https://getcomposer.org/):
 
 ```bash
-composer require nacosvel/database-manager
+composer require nacosvel/datasource-manager
 ```
 
 ## 文档
@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
 use Illuminate\Support\ServiceProvider;
 use Nacosvel\Container\Interop\Discover;
 use Nacosvel\Contracts\DatabaseManager\DatabaseManagerInterface;
-use Nacosvel\DatabaseManager\DatabaseManager;
+use Nacosvel\DataSourceManager\DatabaseManager;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -58,5 +58,4 @@ class AppServiceProvider extends ServiceProvider
 
 ## License
 
-Nacosvel Database Manager is made available under the MIT License (MIT). Please see [License File](LICENSE) for more
-information.
+Nacosvel DataSource Manager is made available under the MIT License (MIT). Please see [License File](LICENSE) for more information.
