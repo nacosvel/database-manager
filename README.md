@@ -42,6 +42,7 @@ use Illuminate\Support\ServiceProvider;
 use Nacosvel\Container\Interop\Discover;
 use Nacosvel\Contracts\DatabaseManager\DatabaseManagerInterface;
 use Nacosvel\DataSourceManager\DatabaseManager;
+use Nacosvel\DataSourceManager\TransactionManager;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -50,7 +51,29 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(DatabaseManagerInterface::class, function () {
             return new DatabaseManager($this->app['db']);
         });
+        $this->app->bind('TM', function ($app) {
+            return new TransactionManager($app[DatabaseManagerInterface::class], new class() {
+                protected mixed $connection;
+
+                public function beginTransaction(): string
+                {
+                    return 'beginTransaction';
+                }
+
+                public function __invoke(mixed $connection): static
+                {
+                    $this->connection = $connection;
+                    return $this;
+                }
+
+                public function __call(string $method, array $parameters)
+                {
+                    return call_user_func_array([$this->connection, $method], $parameters);
+                }
+            });
+        });
         Discover::container();
+        // app('TM')->beginTransaction();// beginTransaction
     }
 
 }
