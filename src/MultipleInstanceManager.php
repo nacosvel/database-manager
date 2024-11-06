@@ -116,7 +116,7 @@ abstract class MultipleInstanceManager
         }
 
         if (method_exists($this, $driverMethod = 'create' . ucfirst($config['driver']) . 'Driver')) {
-            return $this->{$driverMethod}($config);
+            return call_user_func([$this, $driverMethod], $config);
         }
 
         throw new InvalidArgumentException("Instance driver [{$config['driver']}] is not supported.");
@@ -131,7 +131,7 @@ abstract class MultipleInstanceManager
      */
     protected function callCustomCreator(array $config): mixed
     {
-        return $this->customCreators[$config['driver']]($this->app, $config);
+        return call_user_func($this->customCreators[$config['driver']], $this->app, $config);
     }
 
     /**
@@ -193,7 +193,7 @@ abstract class MultipleInstanceManager
      */
     public function __call(string $method, array $parameters)
     {
-        return $this->instance()->$method(...$parameters);
+        return call_user_func_array([$this->instance(), $method], $parameters);
     }
 
 }
